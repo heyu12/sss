@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>宋画的历史</title>
+		<style type="text/css">
+			*{
+				text-decoration: none;
+			}
+		</style>
+	</head>
+	<link href="css/style.css" rel="stylesheet">
+	<body style="display: block;position: fixed;align-items: center;margin-left:4%;margin-top: 65px;">
+		<div style="position: fixed;margin-top: -40px;background-color: #BCBBBB ;height: 50px;line-height: 50px;width: 1750px;">
+			<a href="#" style="margin-left:210px;color: brown">搜索</a> <span
+				style="margin-left:600px;font-size: 17px;color:brown">墨&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;韵</span>
+			<select name="menu" id="menu" style="margin-left:560px;color:brown">
+				<option value="0">菜单</option>
+				<option value="1">网页首页</option>
+				<option value="2">宋画历史</option>
+				<option value="3">新闻咨询</option>
+				<option value="4">关于我们</option>
+			</select>
+		</div>
+		
+		<div style="border: none;width: 1750px;height: 850px;background-color: #333333;text-align: center;padding-top: 40px;">
+			<p><h1 style="font-size: 40px;color: sandybrown;height: 50px;line-height: 55px;">宋画的历史</h1></p>
+			<div style="border: none; width: 1750px;margin-top: 50px;">
+				<span style="float: left;margin-left: 335px;"><a href="historysongpainting_introduce.html"><h3 style="color: white">宋画的简介</h3><h6 style="color: sandybrown;">——————————|——————————</h6></a></span>
+				<span style="float: left;"><a href="historysongpainting_boom.html"><h4 style="color: #999999">宋画的繁荣</h3><h6 style="color: black;">——————————|——————————</h6></a></span>
+				<span style="float: left;"><a href="historysongpainting_relation.html"><h4 style="color: #999999">宋画相关信息</h3><h6 style="color: black;">——————————|——————————</h6></a></span>
+				<span style="float: left;"><a href="historysongpainting_dev.html"><h4 style="color: #999999">宋画发展阶段</h3><h6 style="color: black;">——————————|——————————</h6></a></span>
+			</div>
+			<p style="line-height: 40px;height: 40px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </p>
+			<div style="margin-top: 100px;">
+				<p>
+					<h1 style="color: sandybrown;">&lt;————&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宋画简介&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;————&gt;</h1>
+					<p style="font-size: 20px; margin-top: 25px;color: #999999;">中国宋代期间的绘画作品</p>
+					<h1 style="font-size: 20px; margin-top: 25px;color: #999999;">——</h1>
+					<p style="font-size: 16px; margin-top: 35px;color: #999999;">宋代绘画是在中国宋代期间的绘画作品，中国宋朝延续300多年，其绘画在隋唐五代的基础上继续得到发展。民间绘画、宫廷绘画</p>
+					<p style="font-size: 16px; margin-top: 15px;color: #999999;">士大夫绘画各自形成体系，彼此间又互相影响、吸收、渗透、构成宋代绘画丰富多彩的国貌</p>
+					<p style="font-size: 16px; margin-top: 80px;color: #999999;">中文名&nbsp;&nbsp;&nbsp;&nbsp;宋代绘画&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;含义&nbsp;&nbsp;&nbsp;&nbsp;中国宋代期间的绘画作品</p>
+					<p style="font-size: 16px; margin-top: 30px;color: #999999;">分类&nbsp;&nbsp;&nbsp;&nbsp;民间绘画&nbsp;&nbsp;&nbsp;&nbsp;宫廷绘画&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;特点&nbsp;&nbsp;&nbsp;&nbsp;丰富多彩的面貌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+				</p>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+		<script>
+			
+			// 监听下拉菜单
+			$("#menu").change(function() {
+				menu = document.getElementById("menu").value;
+				console.log("menu:", menu);
+				if (menu == 1) {
+					window.location.href = "index.html";
+				} else if (menu == 2) {
+					window.location.href = "historysongpainting_introduce.html"
+				} else {
+					return false;
+				}
+			});
+		</script>
+	</body>
+</html>

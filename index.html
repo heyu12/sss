@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>宋画的发展</title>
+	</head>
+	<link href="css/style.css" rel="stylesheet">
+
+	<body style="display: block;position: fixed;align-items: center;margin-left:4%;margin-top: 65px;">
+
+		<div style="position: fixed;margin-top: -40px;">
+			<a href="#" style="margin-left:210px;color: brown; font-size: 17px;" >搜索</a> <span
+				style="margin-left:600px;font-size: 17px;color: brown; font-size: 20px;">墨&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;韵</span>
+			<select name="menu" id="menu" style="margin-left:560px;color: brown; font-size: 17px;">
+				<option value="0">菜单</option>
+				<option value="1">网页首页</option>
+				<option value="2">宋画历史</option>
+				<option value="3">新闻咨询</option>
+				<option value="4">关于我们</option>
+			</select>
+		</div>
+		<div class="box"
+			style="background-image: url(/微信图片_20221219144115.jpg);width: 1750px;height: 730px;border: 1px solid white;background-size:100% 100%;text-align: center;">
+
+			<iframe src="iframe.html" name="iframe" id="iframe"
+				style="width: 1313px;height: 550px;margin-top: 78px;margin-left: -19px;"></iframe>
+
+
+			<!-- 素材更换菜单栏 -->
+			<div style="margin-top: 20px;">
+				|<a href="#" onclick="refresh(1)"
+					style="color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宋画的背景&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>|
+				<a href="#" onclick="refresh(2)"
+					style="color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宋画的山&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>|
+				<a href="#" onclick="refresh(3)"
+					style="color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宋画的水&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>|
+				<a href="#" onclick="refresh(4)"
+					style="color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宋画的花鸟&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>|
+			</div>
+		</div>
+
+		<!-- 初始素材 -->
+		<div id="sourcematerial" style="margin-top: 10px; position: fixed;z-index: -1;">
+			<img id="img1" src="/微信图片_20221219144115.jpg" alt="" draggable="true" ondragstart="drag(event)"
+				style="width: 245px;height: 140px;display: block;float: left;" />
+			<img id="img2" src="/屏幕截图_20221026_122939.png" alt="" draggable="true" ondragstart="drag(event)"
+				style="width: 245px;height: 140px;display: block;float: left;" />
+			<img id="img3" src="/微信图片_20221219144115.jpg" alt="" draggable="true" ondragstart="drag(event)"
+				style="width: 245px;height: 140px;display: block;float: left;" />
+			<img id="img4" src="/微信图片_20221219144115.jpg" alt="" draggable="true" ondragstart="drag(event)"
+				style="width: 245px;height: 140px;display: block;float: left;" />
+			<img id="img5" src="/微信图片_20221219144115.jpg" alt="" draggable="true" ondragstart="drag(event)"
+				style="width: 245px;height: 140px;display: block;float: left;" />
+			<img id="img6" src="/微信图片_20221219144115.jpg" alt="" draggable="true" ondragstart="drag(event)"
+				style="width: 245px;height: 140px;display: flex; float: left;" />
+			<img id="img7" src="/微信图片_20221219144115.jpg" alt="" draggable="true" ondragstart="drag(event)"
+				style="width: 245px;height: 140px;display: flex; " />
+		</div>
+
+		<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+		<script>
+			// 记录上次点击的图片，用于还原样式
+			let A = null;
+			// 点击图片拖拽
+			let drag = (e) => {
+				if (A != null) {
+					A.target.style.width = "240px";
+					A.target.style.height = "140px";
+					A.target.style.marginTop = "0px";
+				}
+				
+				e.dataTransfer.setData("picturedragging", e.target.id);
+				console.log("e", e.target.src);
+				e.target.style.width = "320px";
+				e.target.style.height = "160px";
+				e.target.style.marginTop = "-10px";
+				A = e; // 记录上一张图片dom
+				var imgg = '<img id="imgg" src="'+e.target.src+'" width="540" height="280" ondblclick="return Resize(this,10);return false;" onmousewheel="return resizeimg(this)"/>'
+				// 将要拖拽的元素放到本地缓存中，并设置属性
+				window.localStorage.setItem("showImage", imgg);	
+			}
+
+
+			// 素材更换
+			function refresh(index) {
+				var sourcematerial = document.getElementById("sourcematerial");
+				//	宋画背景
+				var source1 =
+					`<img id="img1" src="/屏幕截图_20221026_122939.png" alt="" draggable="true" ondragstart="drag(event)"
+						style="width: 245px;height: 140px;display: block;float: left;"  />
+					 <img id="img2" src="/微信图片_20221219144115.jpg" alt="" draggable="true" ondragstart="drag(event)"
+						style="width: 245px;height: 140px;display: block;float: left;"  />
+					 <img id="img3" src="/微信图片_20221219144115.jpg" alt="" draggable="true" ondragstart="drag(event)"
+						style="width: 245px;height: 140px;display: block;float: left;"  />
+					 <img id="img4" src="/微信图片_20221219144115.jpg" alt="" draggable="true" ondragstart="drag(event)"
+						style="width: 245px;height: 140px;display: block;float: left;"  />
+					 <img id="img5" src="/微信图片_20221219144115.jpg" alt="" draggable="true" ondragstart="drag(event)"
+						style="width: 245px;height: 140px;display: block;float: left;"  />
+					 <img id="img6" src="/微信图片_20221219144115.jpg" alt="" draggable="true" ondragstart="drag(event)"
+						style="width: 245px;height: 140px;display: flex;float: left;"  />
+					 <img id="img7" src="/微信图片_20221219144115.jpg" alt="" draggable="true" ondragstart="drag(event)"
+						style="width: 245px;height: 140px;display: flex;"  />`;
+
+				// 宋画的山
+				var source2 =
+					`<img id="img1" src="350cf94c742166ab113b3ec82df1455a_.jpg" alt="" draggable="true" ondragstart="drag(event)"
+						style="width: 245px;height: 140px;display: block;float: left;"  />
+					 <img id="img2" src="919439abed6978f818c96a77b8487e4d_.jpg"" alt="" draggable="true" ondragstart="drag(event)"
+						style="width: 245px;height: 140px;display: block;float: left;"  />
+					 <img id="img3" src="6d9ac2e752f0b475de3d0ce006b671c2_.jpg" alt="" draggable="true" ondragstart="drag(event)"
+						style="width: 245px;height: 140px;display: block;float: left;"  />
+					 <img id="img4" src="3fb646f1f4301fb654a9ee6b453f56f0_.jpg" alt="" draggable="true" ondragstart="drag(event)"
+						style="width: 245px;height: 140px;display: block;float: left;"  />
+					 <img id="img5" src="5a2f46316f44c9fb44e420ceb05dd404_.jpg" alt="" draggable="true" ondragstart="drag(event)"
+						style="width: 245px;height: 140px;display: block;float: left;"  />
+					 <img id="img6" src="2642e724d09eec954a2409c5483d6c51_.jpg" alt="" draggable="true" ondragstart="drag(event)"
+						style="width: 245px;height: 140px;display: flex;float: left;"/>
+					 <img id="img7" src="a3ed65c9d68bcd0705848e28fa532c46_.jpg" alt="" draggable="true" ondragstart="drag(event)"
+						style="width: 245px;height: 140px;display: flex;"  />`;
+
+
+				// 宋画的水
+				var source3 =
+					`<img id="img1" src="微信图片_20221219144115.jpg" alt="" draggable="true" ondragstart="drag(event)"
+						style="width: 245px;height: 140px;display: block;float: left;"  />
+					 <img id="img2" src="微信图片_20221219144115.jpg" alt="" draggable="true" ondragstart="drag(event)"
+						style="width: 245px;height: 140px;display: block;float: left;"  />
+					 <img id="img3" src="屏幕截图_20221026_122939.png" alt="" draggable="true" ondragstart="drag(event)"
+						style="width: 245px;height: 140px;display: block;float: left;"  />
+					 <img id="img4" src="微信图片_20221219144115.jpg" alt="" draggable="true" ondragstart="drag(event)"
+						style="width: 245px;height: 140px;display: block;float: left;"  />
+					 <img id="img5" src="微信图片_20221219144115.jpg" alt="" draggable="true" ondragstart="drag(event)"
+						style="width: 245px;height: 140px;display: block;float: left;"  />
+					 <img id="img6" src="微信图片_20221219144115.jpg" alt="" draggable="true" ondragstart="drag(event)"
+						style="width: 245px;height: 140px;display: flex;float: left;" />
+					 <img id="img7" src="微信图片_20221219144115.jpg" alt="" draggable="true" ondragstart="drag(event)"
+						style="width: 245px;height: 140px;display: flex;"  />`;
+
+
+				// 宋画的花鸟
+				var source4 =
+					`<img id="img1" src="微信图片_20221219144115.jpg" alt="" draggable="true" ondragstart="drag(event)"
+						style="width: 245px;height: 140px;display: block;float: left;"  />
+					 <img id="img2" src="微信图片_20221219144115.jpg" alt="" draggable="true" ondragstart="drag(event)"
+						style="width: 245px;height: 140px;display: block;float: left;"  />
+					 <img id="img3" src="微信图片_20221219144115.jpg" alt="" draggable="true" ondragstart="drag(event)"
+						style="width: 245px;height: 140px;display: block;float: left;"  />
+					 <img id="img4" src="屏幕截图_20221026_122939.png" alt="" draggable="true" ondragstart="drag(event)"
+						style="width: 245px;height: 140px;display: block;float: left;"  />
+					 <img id="img5" src="微信图片_20221219144115.jpg" alt="" draggable="true" ondragstart="drag(event)"
+						style="width: 245px;height: 140px;display: block;float: left;"  />
+					 <img id="img6" src="微信图片_20221219144115.jpg" alt="" draggable="true" ondragstart="drag(event)"
+						style="width: 245px;height: 140px;display: flex; float: left;"  />
+					 <img id="img7" src="微信图片_20221219144115.jpg" alt="" draggable="true" ondragstart="drag(event)"
+						style="width: 245px;height: 140px;display: flex;"  />`;
+						
+						
+				// 监听素材更换按钮
+				if (index == 1) {
+					sourcematerial.innerHTML = source1;
+				} else if (index == 2) {
+					sourcematerial.innerHTML = source2;
+				} else if (index == 3) {
+					sourcematerial.innerHTML = source3;
+				} else {
+					sourcematerial.innerHTML = source4;
+				}
+				
+
+			}
+
+
+
+			$("#menu").change(function() {
+				menu = document.getElementById("menu").value;
+				console.log("menu:", menu);
+				if (menu == 1) {
+					window.location.href = "shouye.html";
+				} else if (menu == 2) {
+					window.location.href = "historysongpainting_introduce.html"
+				} else {
+					return false;
+				}
+			});
+
+		</script>
+	</body>
+</html>

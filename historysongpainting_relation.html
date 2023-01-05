@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>宋画的历史</title>
+		<style type="text/css">
+			*{
+				text-decoration: none;
+			}
+		</style>
+	</head>
+	<link href="css/style.css" rel="stylesheet">
+	<body style="display: block;position: fixed;align-items: center;margin-left:4%;margin-top: 65px;">
+		<div style="position: fixed;margin-top: -40px;background-color: #999999 ;height: 50px;line-height: 50px;width: 1750px;">
+			<a href="#" style="margin-left:210px;color: brown">搜索</a> <span
+				style="margin-left:600px;font-size: 17px;color: brown">墨&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;韵</span>
+			<select name="menu" id="menu" style="margin-left:560px;color:brown">
+				<option value="0">菜单</option>
+				<option value="1">网页首页</option>
+				<option value="2">宋画历史</option>
+				<option value="3">新闻咨询</option>
+				<option value="4">关于我们</option>
+			</select>
+		</div>
+		
+		<div style="border: none;width: 1750px;height: 850px;background-color: #333333;text-align: center;padding-top: 40px;">
+			<p><h1 style="font-size: 40px;color: sandybrown;height: 50px;line-height: 55px;">宋画的历史</h1></p>
+			<div style="border: none; width: 1750px;margin-top: 50px;">
+				<span style="float: left;margin-left: 335px;"><a href="historysongpainting_introduce.html"><h4 style="color: #999999">宋画的简介</h3><h6 style="color: black;">——————————|——————————</h6></a></span>
+				<span style="float: left;"><a href="historysongpainting_boom.html"><h4 style="color: #999999">宋画的繁荣</h4><h6 style="color: black;">——————————|——————————</h6></a></span>
+				<span style="float: left;"><a href="historysongpainting_relation.html"><h3 style="color: white">宋画相关信息</h3><h6 style="color: sandybrown;">——————————|——————————</h6></a></span>
+				<span style="float: left;"><a href="historysongpainting_dev.html"><h4 style="color: #999999">宋画发展阶段</h3><h6 style="color: black;">——————————|——————————</h6></a></span>
+			</div>
+			<p style="line-height: 40px;height: 40px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </p>
+			<div style="margin-top: 100px;">
+				<p>
+					<h1 style="color: sandybrown;">&lt;————&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宋画相关简介&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;————&gt;</h1>
+					<p style="font-size: 20px; margin-top: 25px;color: #999999;">中国宋代期间的绘画作品</p>
+					<h1 style="font-size: 20px; margin-top: 25px;color: #999999;">——</h1>
+					<p style="font-size: 16px; margin-top: 35px;color: #999999;">宋代继续设立翰林图画院，以培养宫廷需要的绘画人才。北宋徽宗时还曾一度设立画学。 出于装点宫廷、图绘寺观等需要,都很重视画院建设。</p>
+					<p style="font-size: 16px; margin-top: 20px;color: #999999;">画院画家与社会保持一定联系， 但又受皇帝的制约，宫廷绘画带有明显的贵族美术的特色，既精密不苟，又在某些作品中有萎靡柔媚的趣味。</p>
+					<p style="font-size: 16px; margin-top: 20px;color: #999999;">画院集中了社会，上的优秀画家，体现了时较高的水平，创作出如郭熙的《早春图》、《关山春雪图》 ,张择端的《清明上河图》、《西湖争 标图》，</p>
+					<p style="font-size: 16px; margin-top: 20px;color: #999999;">王希孟的《千里江山图》，李唐的《采薇图》、《万壑松风图》， 马远的 《踏歌图》、《水图》 等大批成功的作品。</p>
+				</p>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+		<script>
+			
+			// 监听下拉菜单
+			$("#menu").change(function() {
+				menu = document.getElementById("menu").value;
+				console.log("menu:", menu);
+				if (menu == 1) {
+					window.location.href = "index.html";
+				} else if (menu == 2) {
+					window.location.href = "historysongpainting_introduce.html"
+				} else {
+					return false;
+				}
+			});
+		</script>
+	</body>
+</html>

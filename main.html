@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>宋画的历史</title>
+		<style type="text/css">
+			* {
+				text-decoration: none;
+			}
+		</style>
+	</head>
+	<link href="css/style.css" rel="stylesheet">
+	<body style="display: block;position: fixed;align-items: center;margin-left:4%;margin-top: 65px;">
+		<div
+			style="position: fixed;margin-top: -40px;background-color: #BCBBBB ;height: 50px;line-height: 50px;width: 1750px;">
+			<a href="#" style="margin-left:210px;color:brown">搜索</a> <span
+				style="margin-left:600px;font-size: 20px;color: brown">墨&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;韵</span>
+			<select name="menu" id="menu" style="margin-left:560px;font: size 17px;color: brown">
+				<option value="0">菜单</option>
+				<option value="1">网页首页</option>
+				<option value="2">宋画历史</option>
+				<option value="3">新闻咨询</option>
+				<option value="4">关于我们</option>
+			</select>
+		</div>
+
+		<div
+			style="border: none;width: 1750px;height: 850px;background-color:  beige;text-align: center;padding-top: 40px;">
+			<div id="left" class="containerleft" style="height:840px;width:950x;margin-top: -30px;">
+				<div id="b1" style="background-image: url(/755426e7ac747bd0d43f3940e845808.png);background-repeat: no-repeat;margin-left: 150px;margin-top: 230px; width: 700px;height: 400px;background-size: 600px 400px;padding-top: 70px;">
+					<p style="font-size: 25px;margin-left: -100px;">宋画文创与展示</p>
+					<p style="font-size: 105px;font-weight: 50;margin-left: -100px;margin-top: 58px;">生成宋画的文</p>
+					<p style="font-size: 105px;font-weight: 50;margin-left: -100px;margin-top: 100px;">创</p>
+				</div>
+				
+			</div>
+			<div id="right" class="container" style="height:840px;width:650x;margin-top: 100px;display: block;position: fixed;margin-top: -1070px;background-image: url(image/3936b3b07cabd64ae30533ec1b7120c.png);background-repeat: no-repeat;background-size: 100% 100%;">
+				<div id="b2" style="background-image: url(/d2018b85839caf64c775578167c172b.png);background-repeat: no-repeat;width: 500px;height: 840px;background-size: 250px 300px;margin-top: 300px;margin-left: 200px;">
+					<p style="color: red;font-size: 25px;font-weight: 100;position: fixed;margin-top: 81px;margin-left: 50px;">景观木架框架</p>
+					<p style="font-size: 20px;font-weight: 100;position: fixed;margin-left: 66px;margin-top: 124px;">展示你的宋画</p>
+					<p style="color: white; font-size: 18px;font-weight: 100;position: fixed;margin-top: 248px;margin-left: 90px;">产品生成</p>
+				</div>
+			</div>
+			<style>
+				.containerleft {
+					width: 950px;
+					height: 840px;
+				
+					animation: move 2.5s linear 1;
+					animation-fill-mode:forwards;
+				}
+
+				@keyframes move {
+					0% {
+						transform: translateX(-600px);
+					}
+
+					100% {
+						transform: translateX(40px);
+					}
+					
+				}
+				
+				.container {
+					width: 650px;
+					height: 840px;
+	
+					animation: mymove 2.5s linear 1;
+					animation-fill-mode:forwards;
+				}
+				
+				@keyframes mymove {
+					0% {
+						transform: translateX(1900px);
+					}
+				
+					100% {
+						transform: translateX(1030px);
+					}
+					
+				}
+			</style>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+		<script>
+			$("#menu").change(function() {
+				menu = document.getElementById("menu").value;
+				console.log("menu:", menu);
+				if (menu == 1) {
+					window.location.href = "index.html";
+				} else if (menu == 2) {
+					window.location.href = "historysongpainting_introduce.html"
+				} else {
+					return false;
+				}
+			});
+		</script>
+	</body>
+</html>

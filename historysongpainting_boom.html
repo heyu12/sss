@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>宋画的历史</title>
+		<style type="text/css">
+			*{
+				text-decoration: none;
+			}
+		</style>
+	</head>
+	<link href="css/style.css" rel="stylesheet">
+	<body style="display: block;position: fixed;align-items: center;margin-left:4%;margin-top: 65px;">
+		<div style="position: fixed;margin-top: -40px;background-color: #BCBBBB ;height: 50px;line-height: 50px;width: 1750px;">
+			<a href="#" style="margin-left:210px;color: brown;">搜索</a> <span
+				style="margin-left:600px;font-size: 17px;color: brown">墨&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;韵</span>
+			<select name="menu" id="menu" style="margin-left:560px;color: brown">
+				<option value="0">菜单</option>
+				<option value="1">网页首页</option>
+				<option value="2">宋画历史</option>
+				<option value="3">新闻咨询</option>
+				<option value="4">关于我们</option>
+			</select>
+		</div>
+		
+		<div style="border: none;width: 1750px;height: 850px;background-color: #333333;text-align: center;padding-top: 40px;">
+			<p><h1 style="font-size: 40px;color: sandybrown;height: 50px;line-height: 55px;">宋画的历史</h1></p>
+			<div style="border: none; width: 1750px;margin-top: 50px;">
+				<span style="float: left;margin-left: 335px;"><a href="historysongpainting_introduce.html"><h4 style="color: #999999">宋画的简介</h3><h6 style="color: black;">——————————|——————————</h6></a></span>
+				<span style="float: left;"><a href="historysongpainting_boom.html"><h3 style="color: white">宋画的繁荣</h3><h6 style="color: sandybrown;">——————————|——————————</h6></a></span>
+				<span style="float: left;"><a href="historysongpainting_relation.html"><h4 style="color: #999999">宋画相关信息</h3><h6 style="color: black;">——————————|——————————</h6></a></span>
+				<span style="float: left;"><a href="historysongpainting_dev.html"><h4 style="color: #999999">宋画发展阶段</h3><h6 style="color: black;">——————————|——————————</h6></a></span>
+			</div>
+			<p style="line-height: 40px;height: 40px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </p>
+			<div style="margin-top: 100px;">
+				<p>
+					<h1 style="color: sandybrown;">&lt;————&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宋画的繁荣&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;————&gt;</h1>
+					<p style="font-size: 20px; margin-top: 25px;color: #999999;">中国宋代期间的绘画作品</p>
+					<h1 style="font-size: 20px; margin-top: 25px;color: #999999;">——</h1>
+					<p style="font-size: 16px; margin-top: 35px;color: #999999;">宋代绘画进入手工商业行列，与更多的群众建立较为密切的联系，一批技艺精湛的职业画家，将作品作为商品在市场上出售，汴</p>
+					<p style="font-size: 16px; margin-top: 20px;color: #999999;">京及临安都有纸画行业。汴京大相国寺每月开放5次庙会，百货云集，其中就有售卖书籍和图画的摊店；南宋临安夜市也有细画扇面、</p>
+					<p style="font-size: 16px; margin-top: 20px;color: #999999;">梅竹扇面出售;汴京、临安等地的酒楼也以悬挂字画美化店堂,作为吸弓|顾客的手段。</p>
+					<p style="font-size: 16px; margin-top: 80px;color: #999999;">社会对绘画的需求和民间职业画家创作的活跃，是推动宋代绘画发展的重要因素。宋代由于手工业的发达，促成了雕版印刷的发展与</p>
+					<p style="font-size: 16px; margin-top: 20px;color: #999999;">普及，出现了汴京、临安、平阳、成都、建阳等雕版中心，不少书籍及佛经都附有版画插图，现存宋金雕印的弥勒像、陀罗尼经咒、《</p>
+					<p style="font-size: 16px; margin-top: 20px;color: #999999;">佛国禅师文殊指南图赞》《赵城藏》等，可见其绘刻之精美程度。</p>
+				</p>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+		<script>
+			
+			// 监听下拉菜单
+			$("#menu").change(function() {
+				menu = document.getElementById("menu").value;
+				console.log("menu:", menu);
+				if (menu == 1) {
+					window.location.href = "index.html";
+				} else if (menu == 2) {
+					window.location.href = "historysongpainting_introduce.html"
+				} else {
+					return false;
+				}
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,116 @@
+<html>
+	<head>
+		<title>鼠标滚动调整图片大小</title>
+		<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+		<script language="javascript">
+			<!--
+			var count = 10;
+
+			function resizeimg(oImage) {
+				count = Counting(count);
+				Resize(oImage, count);
+				return false;
+			}
+
+			function Counting(newzoom) {
+				if (event.wheelDelta >= 120)
+					newzoom++;
+				else if (event.wheelDelta <= -120)
+					newzoom--;
+				if (newzoom < 2) newzoom = 2; //只允许缩小到20%
+				if (newzoom > 50) newzoom = 50; //只允许放大到500%
+				return newzoom;
+			}
+
+			function Resize(oImage, newzoom) {
+				oImage.style.zoom = newzoom + '0%';
+				count = newzoom;
+			}
+			var imggs="";
+			var count2 = 0;
+			
+			function a1(){
+			  var showImage = window.localStorage['showImage'];
+			  console.log("showImage",showImage)
+				if(showImage!=null){
+					if(count2<4){
+						imggs+=showImage;
+						$("#childBox").html(imggs);
+						
+						console.log(count2)
+						count2++;
+					}else{
+						console.log("yi'jin");
+						imggs="";
+						count2=0;
+					}
+					localStorage.removeItem('showImage');
+				}
+				
+			}
+			
+			function a2(){
+			  var showImage = window.localStorage['showImage'];
+			  console.log("showImage",showImage)
+				if(showImage!=null){
+					$("#imgg").attr("src",showImage);
+					localStorage.removeItem('showImage');
+				}
+			}
+			
+			function a3(){
+			  var showImage = window.localStorage['showImage'];
+			  console.log("showImage",showImage)
+				if(showImage!=null){
+					$("#imgg").attr("src",showImage);
+					localStorage.removeItem('showImage');
+				}
+			}
+			
+			function a4(){
+			  var showImage = window.localStorage['showImage'];
+			  console.log("showImage",showImage)
+				if(showImage!=null){
+					$("#imgg").attr("src",showImage);
+					localStorage.removeItem('showImage');
+				}
+			}
+			setInterval(()=>{
+			
+			    a1();
+			
+			},1500);
+			
+			window.onload = function() {
+						$("#imgg").attr("onmousewheel","return resizeimg(this)");
+					}
+
+			-->
+		</script>
+		<style type="text/css">
+			::-webkit-scrollbar {
+				width: 3px;
+				height: 3px;
+				/* position: absolute; */
+			}
+			
+			::-webkit-scrollbar-thumb {
+				background-color: rgba(255, 255, 255, .1);
+			}
+			
+			::-webkit-scrollbar-track {
+				background-color: #999999
+			}
+		</style>
+	</head>
+	<body id="bod">
+		<center>
+			<div class="childBox" id="childBox">
+			</div>
+
+		</center>
+		
+
+		
+	</body>
+</html>
